@@ -1,7 +1,17 @@
 const wrappper = document.getElementById("container");
 fetch('https://jsonplaceholder.typicode.com/users')
-.then(response => response.json())
-.then(data => {
-    render(data);
-})
-.catch (error => console.error("Xatolik yuz berdi",error));
+    .then(response => response.json())
+    .then(data => {
+        render(data);
+    })
+    .catch(error => console.error("Xatolik yuz berdi", error));
+function render(user) {
+    const cards = users.map(el => `
+    <div class ="card>
+        <h1>${el.name}</h1>
+        <p>${el.username}</p>
+        <a href="mailto:${el.email}">${el.email}</a>
+    </div>
+        `).join("");
+        wrappper.innerHTML = cards
+}
