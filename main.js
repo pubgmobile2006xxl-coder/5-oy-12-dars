@@ -6,3 +6,5 @@ fetch('https://jsonplaceholder.typicode.com/users')
 
         render(data);
     })
+    .catch(error => console.error("Xatolik yuz berdi:", error));
+
